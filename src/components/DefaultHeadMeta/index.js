@@ -1,4 +1,5 @@
-import React, { PropTypes } from "react"
+import PropTypes from 'prop-types';
+import React from "react";
 import Helmet from "react-helmet"
 
 const DefaultHeadMeta = (props, { metadata: { pkg } }) => (
@@ -11,12 +12,12 @@ const DefaultHeadMeta = (props, { metadata: { pkg } }) => (
         },
         { property: "og:site_name", content: pkg.name },
         { name: "twitter:site", content: `@${ pkg.twitter }` },
-        ...props.meta ? props.meta : [],
+        ...((props.meta ? props.meta : [])),
       ] }
       script={ [
         { src: "https://cdn.polyfill.io/v2/polyfill.min.js" +
         "?features=es6&flags=gated" },
-        ...props.scripts ? props.scripts : [],
+        ...((props.scripts ? props.scripts : [])),
       ] }
     />
 
@@ -31,8 +32,8 @@ const DefaultHeadMeta = (props, { metadata: { pkg } }) => (
 )
 
 DefaultHeadMeta.propTypes = {
-  meta: React.PropTypes.arrayOf(React.PropTypes.object),
-  scripts: React.PropTypes.arrayOf(React.PropTypes.object),
+  meta: PropTypes.arrayOf(PropTypes.object),
+  scripts: PropTypes.arrayOf(PropTypes.object),
 }
 
 DefaultHeadMeta.contextTypes = {
