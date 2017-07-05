@@ -1,3 +1,6 @@
+# node / npm
 node_modules
-dist
 *.log
+
+# phenomic build
+dist
