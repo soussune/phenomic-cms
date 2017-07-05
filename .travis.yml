@@ -14,7 +14,7 @@ cache:
     - node_modules
 
 script:
-  - npm run generate
+  - npm run build
 
 env:
   - CXX=g++-4.8
@@ -41,4 +41,3 @@ after_success: |
         echo "Not Deploying"
       fi
   fi
-  
